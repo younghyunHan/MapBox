@@ -1,10 +1,11 @@
-import React, { useRef, useState, useEffect } from "react";
-// import mapboxgl from "!mapbox-gl"; // eslint-disable-line import/no-webpack-loader-syntax
+import React, { useState } from "react";
 import Map, {
   FullscreenControl,
   GeolocateControl,
   NavigationControl,
 } from "react-map-gl";
+
+import Modal from "../src/components/Modal/Modal";
 
 import "./App.css";
 
@@ -21,13 +22,15 @@ function App() {
           zoom: 3.5,
         }}
         style={{ width: "100vw", height: "100vh" }}
-        mapStyle="mapbox://styles/mapbox/dark-v11"
+        mapStyle="mapbox://styles/mapbox/light-v11"
         mapboxAccessToken={MY_ACCESS_TOKEN}
       >
         <FullscreenControl />
         <GeolocateControl />
         <NavigationControl />
+        <Modal />
       </Map>
+      <Modal />
     </div>
   );
 }
